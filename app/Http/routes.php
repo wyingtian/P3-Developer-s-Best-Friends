@@ -16,9 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('lorem-ipsum','LoremIpsumPageController@index');
-Route::any('lorem-ipsum','LoremIpsumPageController@index');
-Route::get('user-generator','UserGeneratorPageController@index');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -32,4 +30,7 @@ Route::get('user-generator','UserGeneratorPageController@index');
 
 Route::group(['middleware' => ['web']], function () {
     //
+    Route::get('lorem-ipsum','LoremIpsumPageController@index');
+    Route::post('lorem-ipsum','LoremIpsumPageController@getNumber');
+    Route::get('user-generator','UserGeneratorPageController@index');
 });

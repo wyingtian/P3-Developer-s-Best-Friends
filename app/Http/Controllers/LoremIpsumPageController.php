@@ -11,6 +11,13 @@ class LoremIpsumPageController extends Controller
 {
     public function index()
     {
+       $number = "";
+        $paragraphs=[];
+        $view = View::make('loremIpsum',compact('number','paragraphs'));
+        return $view;
+    }
+
+    public function getNumber(Requests\requestRandomTextRequest $request){
         $number = Input::get('number');
         $generator = new LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs($number);

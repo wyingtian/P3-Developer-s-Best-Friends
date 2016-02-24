@@ -12,12 +12,21 @@
 
     <div class="form-group">
         {!! Form::submit('Generate!',['class' => 'btn btn-primary form-control']) !!}
-         </div>
+    </div>
 
     {!! Form::close() !!}
 
+    @if ($errors->any())
+        <ul class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
+
+
     <?php
-    echo "<p>". implode('<p></p>', $paragraphs) .'</p>';
+    echo "<p>" . implode('<p></p>', $paragraphs) . '</p>';
     ?>
 
 @stop
