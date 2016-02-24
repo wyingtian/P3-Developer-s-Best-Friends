@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Badcow\LoremIpsum;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Input;
 
 class LoremIpsumPageController extends Controller
 {
-    public function index(){
-        $numOfParagraph = 3;
-        $view = View::make('loremIpsum')->with($numOfParagraph);
+    public function index()
+    {
+        $number = Input::get('number');
+        $generator = new LoremIpsum\Generator();
+        $paragraphs = $generator->getParagraphs($number);
+        $view = View::make('loremIpsum',compact('number','paragraphs'));
         return $view;
     }
 }
