@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
 
+Route::get('lorem-ipsum','LoremIpsumPageController@index');
+Route::any('lorem-ipsum','LoremIpsumPageController@index');
+Route::get('user-generator','UserGeneratorPageController@index');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
