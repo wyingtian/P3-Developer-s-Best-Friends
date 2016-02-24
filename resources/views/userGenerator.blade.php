@@ -8,17 +8,16 @@
         {!! Form::text('numOfUsers',$numOfUsers,['class' => 'form-control']) !!}
     </div>
     <div>
-        {!! Form::label('add Address') !!}
-        {!! Form::checkbox('address','1',null,['class' => 'checkbox']) !!}
-        {!! Form::label('add Profile') !!}
+        {!! Form::label('addAddress','add Address') !!}
+        {!! Form::checkbox('address','1',null,['class' => 'checkbox','id' => 'addAddress']) !!}
     </div>
+        {!! Form::label('addProfile','add Profile') !!}
     <div>
-        {!! Form::checkbox('profile','2',null,['class' => 'checkbox']) !!}
+        {!! Form::checkbox('profile','2',null,['class' => 'checkbox','id' => 'addProfile']) !!}
     </div>
     <br>
     {!! Form::submit('Generate',['class' => 'btn btn-primary form-control']) !!}
     {!! Form::close() !!}
-
 
     @if ($errors->any())
         <ul class="alert alert-danger">
@@ -30,14 +29,14 @@
 
 
     @if (count($userArray))
-        <ul class="list-group">
-            @foreach ($userArray as $user)
-                <li class="list-group-item">@foreach ($user as $property)
-                        <p>{{$property}}</p>
-                    @endforeach
-                </li>
-            @endforeach
-        </ul>
+    <ul class="list-group">
+        @foreach ($userArray as $user)
+            <li class="list-group-item">@foreach ($user as $property)
+                    <p>{{$property}}</p>
+                @endforeach
+            </li>
+        @endforeach
+    </ul>
     @endif
 
 @stop

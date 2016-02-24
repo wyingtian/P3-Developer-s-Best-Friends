@@ -7,7 +7,7 @@
     {!! Form::open() !!}
     <div class="form-group">
         {!! Form::label('paragraphs','How many paragraphs you want?') !!}
-        {!! Form::text('number',$number,['class' => 'form-control']) !!}
+        {!! Form::text('number',$number,['class' => 'form-control','id' => 'paragraphs']) !!}
     </div>
     <br>
     <br>
