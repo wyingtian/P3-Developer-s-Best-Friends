@@ -9,7 +9,8 @@
         {!! Form::label('paragraphs','How many paragraphs you want?') !!}
         {!! Form::text('number',$number,['class' => 'form-control']) !!}
     </div>
-
+    <br>
+    <br>
     <div class="form-group">
         {!! Form::submit('Generate!',['class' => 'btn btn-primary form-control']) !!}
     </div>
@@ -23,7 +24,6 @@
             @endforeach
         </ul>
     @endif
-
 
     <?php
     echo "<p>" . implode('<p></p>', $paragraphs) . '</p>';

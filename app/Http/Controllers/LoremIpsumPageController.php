@@ -17,7 +17,7 @@ class LoremIpsumPageController extends Controller
         return $view;
     }
 
-    public function getNumber(Requests\requestRandomTextRequest $request){
+    public function GenerateText(Requests\requestRandomTextRequest $request){
         $number = Input::get('number');
         $generator = new LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs($number);

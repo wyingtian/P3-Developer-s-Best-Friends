@@ -31,6 +31,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
     Route::get('lorem-ipsum','LoremIpsumPageController@index');
-    Route::post('lorem-ipsum','LoremIpsumPageController@getNumber');
+    Route::post('lorem-ipsum','LoremIpsumPageController@GenerateText');
     Route::get('user-generator','UserGeneratorPageController@index');
+    Route::post('user-generator','UserGeneratorPageController@generateUser');
 });
