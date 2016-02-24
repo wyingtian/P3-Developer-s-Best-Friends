@@ -5,7 +5,7 @@
     {!! Form::open() !!}
     <div class="form-group">
         {!! Form::label('users','How Many users?') !!}
-        {!! Form::text('numOfUsers',$numOfUsers,['class' => 'form-control']) !!}
+        {!! Form::text('numOfUsers',$numOfUsers,['class' => 'form-control','id' => 'users']) !!}
     </div>
     <div>
         {!! Form::label('addAddress','add Address') !!}
