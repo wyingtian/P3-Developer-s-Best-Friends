@@ -7,9 +7,9 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 
-class LoremIpsumPageController extends Controller
+class LoremIpsumController extends Controller
 {
-    public function index()
+    public function getRandomText()
     {
        $number = "";
         $paragraphs=[];
@@ -17,7 +17,7 @@ class LoremIpsumPageController extends Controller
         return $view;
     }
 
-    public function GenerateText(Requests\requestRandomTextRequest $request){
+    public function postRandomText(Requests\RandomTextRequest $request){
         $number = Input::get('number');
         $generator = new LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs($number);

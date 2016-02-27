@@ -5,9 +5,9 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 use Faker;
-class UserGeneratorPageController extends Controller
+class UserGeneratorController extends Controller
 {
-    public function index(){
+    public function getRandomUser(){
         $numOfUsers = "";
         $addBirthday = "";
         $addProfile = "";
@@ -15,7 +15,7 @@ class UserGeneratorPageController extends Controller
         return View::make('userGenerator',compact('numOfUsers','userArray'));
     }
 
-    public function generateUser(Requests\requestRandomUserRequest $request){
+    public function postRandomUser(Requests\RandomUserRequest $request){
 
         $faker = Faker\Factory::create();
         $numOfUsers = Input::get('numOfUsers');

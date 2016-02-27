@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class requestRandomUserRequest extends Request
+class RandomUserRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

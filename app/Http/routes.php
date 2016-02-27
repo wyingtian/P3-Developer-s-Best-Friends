@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-
     return view('welcome');
 });
 
@@ -29,9 +28,8 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
-    Route::get('lorem-ipsum','LoremIpsumPageController@index');
-    Route::post('lorem-ipsum','LoremIpsumPageController@GenerateText');
-    Route::get('user-generator','UserGeneratorPageController@index');
-    Route::post('user-generator','UserGeneratorPageController@generateUser');
+    Route::get('lorem-ipsum','LoremIpsumController@getRandomText');
+    Route::post('lorem-ipsum','LoremIpsumController@postRandomText');
+    Route::get('user-generator','UserGeneratorController@getRandomUser');
+    Route::post('user-generator','UserGeneratorController@postRandomUser');
 });
