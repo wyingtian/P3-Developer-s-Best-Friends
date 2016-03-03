@@ -16,7 +16,7 @@
         {!! Form::label('addAddress','add Address') !!}
         {!! Form::checkbox('address','2',$val2,['class' => 'checkbox','id' => 'addAddress']) !!}
     </div>
-        {!! Form::label('addProfile','add Profile') !!}
+    {!! Form::label('addProfile','add Profile') !!}
     <div>
         {!! Form::checkbox('profile','3',$val3,['class' => 'checkbox','id' => 'addProfile']) !!}
     </div>
@@ -51,6 +51,7 @@
             </div>
         </div>
         </div>
+    @endif
 
 
 @stop
