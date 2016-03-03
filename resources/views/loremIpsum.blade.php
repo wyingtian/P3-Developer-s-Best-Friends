@@ -6,8 +6,8 @@
 
     {!! Form::open() !!}
     <div class="form-group">
-        {!! Form::label('paragraphs','How many paragraphs you want?') !!}
-        {!! Form::text('number',$number,['class' => 'form-control','id' => 'paragraphs']) !!}
+        {!! Form::label('paragraphs','How many paragraphs you want? ( Max: 99 )') !!}
+        {!! Form::text('number',$number,['class' => 'form-control','id' => 'paragraphs', 'maxlength' => '2']) !!}
     </div>
     <br>
     <br>
@@ -24,11 +24,19 @@
             @endforeach
         </ul>
     @endif
+    @if (count($paragraphs))
+        <br>
+        <div class="panel panel-success ">
+            <div class="panel-heading"><h3 class="panel-title">Here Is Your Random Text</h3></div>
+            <div class="panel-body">
+    @foreach ($paragraphs as $paragraph )
+        <p>{{$paragraph}}</p>
+        <br>
 
-    <?php
-    echo "<p>" . implode('<p></p>', $paragraphs) . '</p>';
-    ?>
+    @endforeach
+            </div>
+        </div>
+        </div>
+    @endif
 
-@stop
-@section('footer')
 @stop

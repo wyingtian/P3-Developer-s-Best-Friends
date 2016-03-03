@@ -24,7 +24,7 @@ class RandomUserRequest extends Request
     public function rules()
     {
         return [
-            'numOfUsers' => 'required|numeric|min:1|max:10',
+            'numOfUsers' => 'required|numeric|min:1|max:99',
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class RandomTextRequest extends Request
+class RandomPasswordRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class RandomTextRequest extends Request
     public function rules()
     {
         return [
-            'number' => 'required|numeric|min:1|max:99',
+            'num_words' => 'required|numeric|min:3|max:15',
         ];
     }
 }

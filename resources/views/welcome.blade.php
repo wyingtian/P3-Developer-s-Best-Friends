@@ -5,4 +5,7 @@
     <div>
         <a href="{{ action('UserGeneratorController@getRandomUser') }}">User generator</a>
     </div>
+    <div>
+        <a href="{{ action('PasswordGeneratorController@getRandomPassword') }}">Password generator</a>
+    </div>
 @stop

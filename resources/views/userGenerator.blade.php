@@ -2,19 +2,25 @@
 
 @section('content')
 
+    <h1> User Generator</h1>
     {!! Form::open() !!}
     <div class="form-group">
-        {!! Form::label('users','How Many users?') !!}
-        {!! Form::text('numOfUsers',$numOfUsers,['class' => 'form-control','id' => 'users']) !!}
+        {!! Form::label('users','How Many users? ( Max: 99 )') !!}
+        {!! Form::text('numOfUsers',$numOfUsers,['class' => 'form-control','id' => 'users','maxlength' => '2']) !!}
+    </div>
+    {!! Form::label('addBirthDate','add birth date') !!}
+    <div>
+        {!! Form::checkbox('birthDate','1',$val1,['class' => 'checkbox','id' => 'addBirthDate']) !!}
     </div>
     <div>
         {!! Form::label('addAddress','add Address') !!}
-        {!! Form::checkbox('address','1',null,['class' => 'checkbox','id' => 'addAddress']) !!}
+        {!! Form::checkbox('address','2',$val2,['class' => 'checkbox','id' => 'addAddress']) !!}
     </div>
         {!! Form::label('addProfile','add Profile') !!}
     <div>
-        {!! Form::checkbox('profile','2',null,['class' => 'checkbox','id' => 'addProfile']) !!}
+        {!! Form::checkbox('profile','3',$val3,['class' => 'checkbox','id' => 'addProfile']) !!}
     </div>
+
     <br>
     {!! Form::submit('Generate',['class' => 'btn btn-primary form-control']) !!}
     {!! Form::close() !!}
@@ -29,14 +35,22 @@
 
 
     @if (count($userArray))
-    <ul class="list-group">
-        @foreach ($userArray as $user)
-            <li class="list-group-item">@foreach ($user as $property)
-                    <p>{{$property}}</p>
-                @endforeach
-            </li>
-        @endforeach
-    </ul>
-    @endif
+        <br>
+        <div class="panel panel-success ">
+            <div class="panel-heading"><h3 class="panel-title">Here Is Your Random Users</h3></div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @foreach ($userArray as $user)
+                        <li class="list-group-item">@foreach ($user as $property)
+                                <p>{{$property}}</p>
+                            @endforeach
+                        </li>
+                    @endforeach
+                </ul>
+                @endif
+            </div>
+        </div>
+        </div>
+
 
 @stop

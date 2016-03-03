@@ -32,4 +32,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('lorem-ipsum','LoremIpsumController@postRandomText');
     Route::get('user-generator','UserGeneratorController@getRandomUser');
     Route::post('user-generator','UserGeneratorController@postRandomUser');
+    Route::get('password-generator','PasswordGeneratorController@getRandomPassword');
+    Route::post('password-generator','PasswordGeneratorController@postRandomPassword');
 });

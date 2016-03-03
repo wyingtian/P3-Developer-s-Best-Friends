@@ -11,7 +11,7 @@ class LoremIpsumController extends Controller
 {
     public function getRandomText()
     {
-       $number = "";
+        $number = 5;
         $paragraphs=[];
         $view = View::make('loremIpsum',compact('number','paragraphs'));
         return $view;
