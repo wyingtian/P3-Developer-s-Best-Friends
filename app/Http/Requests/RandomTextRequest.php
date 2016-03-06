@@ -24,7 +24,7 @@ class RandomTextRequest extends Request
     public function rules()
     {
         return [
-            'number' => 'required|numeric|min:1|max:99',
+            'number_of_paragraphs' => 'required|numeric|min:1|max:99',
         ];
     }
 }

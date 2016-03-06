@@ -16,18 +16,22 @@ class PasswordGeneratorController extends Controller
     {
         $val1 = false;
         $val2 = false;
+        $num_passwords = 3;
+        $passwords = [];
         $SEPARATORS = ['-' => '-', '~' => '~', '_' => '_'];
         $separator = '-';
         $password = '';
-        $num_words = 10;
-        $view = View::make('passwordGenerator', compact('num_words', 'separator', 'SEPARATORS', 'separator', 'password', 'val1', 'val2'));
+        $num_words = 5;
+        $view = View::make('passwordGenerator', compact('num_words', 'num_passwords', 'separator', 'SEPARATORS', 'separator', 'passwords', 'val1', 'val2'));
         return $view;
     }
 
     public function postRandomPassword(Requests\RandomPasswordRequest $request)
     {
         //default values
-        $password = "";
+
+        $passwords = [];
+
         $SPECIAL_CHARS = ['!', '@', '#', '$', '%', '^', '&', '*'];
         $SEPARATORS = ['-' => '-', '~' => '~', '_' => '_'];
         $val1 = false;
@@ -37,25 +41,28 @@ class PasswordGeneratorController extends Controller
         $add_random_number = Input::get('add_random_number');
         $num_words = Input::get('num_words');
         $separator = Input::get('separator');
-
+        $num_passwords  = Input::get('num_passwords');
         // generator logic
-        if ($add_random_number == '1') {
-            $val1 = true;
-            $password = $password . rand(0, 9);
-        }
-        $generator = new HumanPasswordGenerator();
-        $generator
-            ->setWordList('/usr/share/dict/words')
-            ->setWordCount(intval($num_words))
-            ->setWordSeparator($separator);
+        for($i = 0 ; $i < $num_passwords ;$i++ ) {
+            $password = "";
+            if ($add_random_number == '1') {
+                $val1 = true;
+                $password = $password . rand(0, 9);
+            }
+            $generator = new HumanPasswordGenerator();
+            $generator
+                ->setWordList('/usr/share/dict/words')
+                ->setWordCount(intval($num_words))
+                ->setWordSeparator($separator);
 
-        $password .= $generator->generatePassword();
-        if ($add_special_char == '2') {
-            $val2 = true;
-            $password .= $SPECIAL_CHARS[rand(0, 7)];
+            $password .= $generator->generatePassword();
+            if ($add_special_char == '2') {
+                $val2 = true;
+                $password .= $SPECIAL_CHARS[rand(0, 7)];
+            }
+            array_push($passwords, $password);
         }
-
-        $view = View::make('passwordGenerator', compact('num_words', 'separator', 'SEPARATORS', 'password', 'val1', 'val2'));
+        $view = View::make('passwordGenerator', compact('num_words', 'num_passwords','separator', 'SEPARATORS', 'passwords', 'val1', 'val2'));
         return $view;
     }
 }

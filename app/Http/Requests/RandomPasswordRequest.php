@@ -24,6 +24,7 @@ class RandomPasswordRequest extends Request
     public function rules()
     {
         return [
+            'num_passwords' => 'required|numeric|min:1|max:10',
             'num_words' => 'required|numeric|min:3|max:15',
         ];
     }

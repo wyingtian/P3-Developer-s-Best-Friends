@@ -11,17 +11,17 @@ class LoremIpsumController extends Controller
 {
     public function getRandomText()
     {
-        $number = 5;
+        $number_of_paragraphs = 5;
         $paragraphs=[];
-        $view = View::make('loremIpsum',compact('number','paragraphs'));
+        $view = View::make('loremIpsum',compact('number_of_paragraphs','paragraphs'));
         return $view;
     }
 
     public function postRandomText(Requests\RandomTextRequest $request){
-        $number = Input::get('number');
+        $number_of_paragraphs = Input::get('number_of_paragraphs');
         $generator = new LoremIpsum\Generator();
-        $paragraphs = $generator->getParagraphs($number);
-        $view = View::make('loremIpsum',compact('number','paragraphs'));
+        $paragraphs = $generator->getParagraphs($number_of_paragraphs);
+        $view = View::make('loremIpsum',compact('number_of_paragraphs','paragraphs'));
         return $view;
     }
 }

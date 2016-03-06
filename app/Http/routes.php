@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 /*
@@ -27,7 +24,10 @@ Route::get('/', function () {
 |
 */
 
+use App\Http\Controllers\WelcomePageController;
+
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/', 'WelcomePageController@getWelcomePage');
     Route::get('lorem-ipsum','LoremIpsumController@getRandomText');
     Route::post('lorem-ipsum','LoremIpsumController@postRandomText');
     Route::get('user-generator','UserGeneratorController@getRandomUser');
