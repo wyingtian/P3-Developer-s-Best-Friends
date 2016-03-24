@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Hackzilla\PasswordGenerator\Generator\HumanPasswordGenerator;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
 
@@ -14,13 +12,13 @@ class PasswordGeneratorController extends Controller
 {
     public function getRandomPassword()
     {
-        $val1 = false;
-        $val2 = false;
+        //default values when using get method
         $num_passwords = 3;
         $passwords = [];
+        $val1 = false;
+        $val2 = false;
         $SEPARATORS = ['-' => '-', '~' => '~', '_' => '_'];
         $separator = '-';
-        $password = '';
         $num_words = 5;
         $view = View::make('passwordGenerator', compact('num_words', 'num_passwords', 'separator', 'SEPARATORS', 'separator', 'passwords', 'val1', 'val2'));
         return $view;
@@ -29,20 +27,19 @@ class PasswordGeneratorController extends Controller
     public function postRandomPassword(Requests\RandomPasswordRequest $request)
     {
         //default values
-
         $passwords = [];
-
         $SPECIAL_CHARS = ['!', '@', '#', '$', '%', '^', '&', '*'];
         $SEPARATORS = ['-' => '-', '~' => '~', '_' => '_'];
         $val1 = false;
         $val2 = false;
+
         //get values from form
         $add_special_char = Input::get('add_special_char');
         $add_random_number = Input::get('add_random_number');
         $num_words = Input::get('num_words');
         $separator = Input::get('separator');
         $num_passwords  = Input::get('num_passwords');
-        // generator logic
+        //generator logic
         for($i = 0 ; $i < $num_passwords ;$i++ ) {
             $password = "";
             if ($add_random_number == '1') {

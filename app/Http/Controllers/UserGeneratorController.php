@@ -11,6 +11,7 @@ class UserGeneratorController extends Controller
 {
     public function getRandomUser()
     {
+        //default values when using get method
         $val3=false;
         $numOfUsers = 5;
         $val1 = false;
@@ -21,8 +22,7 @@ class UserGeneratorController extends Controller
 
     public function postRandomUser(Requests\RandomUserRequest $request)
     {
-
-
+        // random user logic
         $numOfUsers = Input::get('numOfUsers');
         $userArray = [];
         $val1 = false;
@@ -46,9 +46,6 @@ class UserGeneratorController extends Controller
             }
             array_push($userArray, $user);
         }
-
-
-
         return View::make('userGenerator', compact('numOfUsers', 'userArray','val1','val2','val3'));
     }
 }

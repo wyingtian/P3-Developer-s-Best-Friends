@@ -11,6 +11,7 @@ class LoremIpsumController extends Controller
 {
     public function getRandomText()
     {
+        //default values when using get method
         $number_of_paragraphs = 5;
         $paragraphs=[];
         $view = View::make('loremIpsum',compact('number_of_paragraphs','paragraphs'));

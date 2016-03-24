@@ -24,7 +24,6 @@
 |
 */
 
-use App\Http\Controllers\WelcomePageController;
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'WelcomePageController@getWelcomePage');
@@ -34,4 +33,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('user-generator','UserGeneratorController@postRandomUser');
     Route::get('password-generator','PasswordGeneratorController@getRandomPassword');
     Route::post('password-generator','PasswordGeneratorController@postRandomPassword');
+
+    # Restrict certain routes to only be viewable in the local environments
+    if(App::environment('local')) {
+        Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+    }
 });

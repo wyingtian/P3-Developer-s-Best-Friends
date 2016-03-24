@@ -158,6 +158,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
     ],
 
@@ -206,8 +207,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Form'      => 'Illuminate\Html\FormFacade',
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
-
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
 
     ],
 

@@ -21,7 +21,6 @@
         <div class="col-md-4 text-thin">
             <img class="img-responsive center" src="images/pass-gen.png" alt="password generator image">
             <a href="{{ action('PasswordGeneratorController@getRandomPassword') }}">Password generator</a>
-
         </div>
     </div>
 

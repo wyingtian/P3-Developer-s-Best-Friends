@@ -16,7 +16,7 @@
 
 <header class="header-basic-light">
     <div class="header-limiter">
-        <h1><a href="{{ action('WelcomePageController@getWelcomePage') }}"><span>Developer's Best Friends</span></a></h1>
+        <h1><a href="/"><span>Developer's Best Friends</span></a></h1>
         <nav>
             <a href="{{ action('UserGeneratorController@getRandomUser') }}">Random User Generator &#149 </a>
             <a href="{{ action('LoremIpsumController@getRandomText') }}">Lorem Ipsum Generator &#149 </a>
@@ -30,13 +30,12 @@
 </div>
 
 
-
 <!-- Footer -->
 <footer class="text-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    Copyright &copy; www.yingtian.me 2016
+                    &copy; {{ date('Y') }} &nbsp;&nbsp; www.yingtian.me
                 </div>
             </div>
         </div>
