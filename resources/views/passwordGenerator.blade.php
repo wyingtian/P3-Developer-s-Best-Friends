@@ -9,7 +9,7 @@
         {!! Form::text('num_passwords',$num_passwords,['class' => 'form-control','id' => 'numOfPassword','maxlength' => '2']) !!}
     </div>
     <div>
-        {!! Form::label('numOfWords','Number of words in each passwords? (Range:3 - 10)') !!}
+        {!! Form::label('numOfWords','Number of words in each password? (Range:3 - 10)') !!}
         {!! Form::text('num_words',$num_words,['class' => 'form-control','id' => 'numOfWords','maxlength' => '2']) !!}
     </div>
     <div>
@@ -44,9 +44,7 @@
                     <p id='display-password'>{{$password}}</p>
                     <br>
                 @endforeach
-
             </div>
-
         </div>
         </div>
     @endif

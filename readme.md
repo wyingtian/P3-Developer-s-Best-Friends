@@ -1,35 +1,31 @@
-# Laravel PHP Framework
+# Developer's Best Friends
 
-footer
-http://tutorialzine.com/2015/01/freebie-5-responsive-footer-templates/
-header
-http://tutorialzine.com/2015/02/freebie-7-responsive-header-templates/
+## Live URL
+<http://p3.yingtian.me>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Youtube Demo 
+<https://youtu.be/https://youtu.be/bGUZ0cvMBkQ/>
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+## Description
+This is a web application that contains three tools 
+1. generate lorem text
+2. generate random user 
+3. generate a xkcd password.
 
-## Official Documentation
+## Usage
+click the tool you want and follow the instruction
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## Outside Code
-1 
-I moved all my routes into:
-
-Route::group(['middleware' => ['web']], function () {}
-
-so that $error can be displayed at my view.
+## Details for teaching team
++ No login required.
++ For the server side validation I create rules in the request class, instead of define in the controller
 
 
-use Illuminate\Html
-bindShared() in HtmlServiceProvider.php needs to be changed to singleton() 
+## Outside code and references
+* Bootstrap: <http://getbootstrap.com/>
+* Word list: <https://github.com/first20hours/google-10000-english>
+* Header template is from <http://tutorialzine.com/2015/02/freebie-7-responsive-header-templates/>
+* I moved all my routes into:
+	`Route::group(['middleware' => ['web']], function (){}`
+so that `$error` can be displayed at my view.
+* use of `Illuminate\Html bindShared()` in HtmlServiceProvider.php needs to be changed to `singleton() `
 <https://laracasts.com/discuss/channels/laravel/call-to-undefined-method-illuminatefoundationapplicationbindshared>
