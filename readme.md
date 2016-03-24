@@ -7,7 +7,8 @@
 <https://youtu.be/https://youtu.be/bGUZ0cvMBkQ/>
 
 ## Description
-This is a web application that contains three tools 
+This is a web application that contains three tools.
+ 
 1. generate lorem text
 2. generate random user 
 3. generate a xkcd password.
