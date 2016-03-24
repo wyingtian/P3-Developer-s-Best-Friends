@@ -18,9 +18,9 @@
     <div class="header-limiter">
         <h1><a href="/"><span>Developer's Best Friends</span></a></h1>
         <nav>
-            <a href="{{ action('UserGeneratorController@getRandomUser') }}">Random User Generator &#149 </a>
-            <a href="{{ action('LoremIpsumController@getRandomText') }}">Lorem Ipsum Generator &#149 </a>
-            <a href="{{ action('PasswordGeneratorController@getRandomPassword') }}">Password generator </a>
+            <a href="{{ action('UserGeneratorController@getRandomUser') }}">Random User Generator &#149; </a>
+            <a href="{{ action('LoremIpsumController@getRandomText') }}">Lorem Ipsum Generator &#149; </a>
+            <a href="{{ action('PasswordGeneratorController@getRandomPassword') }}">Password generator; </a>
         </nav>
     </div>
 
@@ -39,9 +39,7 @@
                 </div>
             </div>
         </div>
-    </div>
 </footer>
-
 
 
 </body>
