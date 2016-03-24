@@ -20,7 +20,7 @@
         <nav>
             <a href="{{ action('UserGeneratorController@getRandomUser') }}">Random User Generator &#8286; </a>
             <a href="{{ action('LoremIpsumController@getRandomText') }}">Lorem Ipsum Generator &#8286; </a>
-            <a href="{{ action('PasswordGeneratorController@getRandomPassword') }}">Password generator; </a>
+            <a href="{{ action('PasswordGeneratorController@getRandomPassword') }}">Password generator </a>
         </nav>
     </div>
 
