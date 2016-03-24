@@ -4,7 +4,7 @@
 <http://p3.yingtian.me>
 
 ## Youtube Demo 
-<https://youtu.be/https://youtu.be/bGUZ0cvMBkQ/>
+<https://youtu.be/bGUZ0cvMBkQ/>
 
 ## Description
 This is a web application that contains three tools.
